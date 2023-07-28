@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as ScrollArea from '@radix-ui/react-scroll-area';
-import autoAnimate from "@formkit/auto-animate";
 
 
 
@@ -13,12 +12,6 @@ const ScrollAreaDemo = function ({ setPickedClub }) {
     useEffect(() => {
         fetch('http://192.168.1.29:4000/clubs/').then(res => res.json()).then(data => setClubs(data)).catch(err => console.log(err));
     }, [])
-
-    useEffect(() => {
-        if (parentRef.current) {
-            autoAnimate(parentRef.current);
-        }
-    }, [parentRef]);
 
 
     function clubClickHandler(e) {
@@ -37,7 +30,7 @@ const ScrollAreaDemo = function ({ setPickedClub }) {
                     <div className="text-red-600 text-2xl text-center font-bold">
                         Kulüpler
                     </div>
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3' ref={parentRef}>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                         {clubs.map((club) => (
                             <label htmlFor="my_modal_3" onClick={clubClickHandler} id={club._id} key={club._id} className='flex align-center hover:opacity-70  justify-between p-4 bg-blackA5 border-l m-3 cursor-pointer shadow-[0_2px_5x] shadow-blackA7'>
                                 <div className="avatar">
