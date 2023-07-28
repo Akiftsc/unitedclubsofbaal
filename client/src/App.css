@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html, body{
+  background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+  height: 100%;
+  overflow-x: hidden;
+}
+
+img{
+  image-rendering: optimizeQuality;
+  object-fit: cover;
+}
+
+.navItem{
+  @apply grid place-items-center cursor-pointer mx-2 !text-white focus:text-white
+}
+
+.animation-text{
+  @apply animate-fade-up animate-once
+}
